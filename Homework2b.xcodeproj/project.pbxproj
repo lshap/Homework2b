@@ -23,6 +23,7 @@
 		9C4F6CF916ED4051001DA8F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F6CD416ED4050001DA8F4 /* Foundation.framework */; };
 		9C4F6D0116ED4051001DA8F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F6CFF16ED4051001DA8F4 /* InfoPlist.strings */; };
 		9C4F6D0416ED4051001DA8F4 /* Homework2bTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F6D0316ED4051001DA8F4 /* Homework2bTests.m */; };
+		9C4F6D0F16ED4145001DA8F4 /* LMSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F6D0E16ED4145001DA8F4 /* LMSTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		9C4F6D0016ED4051001DA8F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C4F6D0216ED4051001DA8F4 /* Homework2bTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Homework2bTests.h; sourceTree = "<group>"; };
 		9C4F6D0316ED4051001DA8F4 /* Homework2bTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Homework2bTests.m; sourceTree = "<group>"; };
+		9C4F6D0D16ED4145001DA8F4 /* LMSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMSTableViewController.h; sourceTree = "<group>"; };
+		9C4F6D0E16ED4145001DA8F4 /* LMSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				9C4F6CEA16ED4051001DA8F4 /* MainStoryboard.storyboard */,
 				9C4F6CED16ED4051001DA8F4 /* LMSViewController.h */,
 				9C4F6CEE16ED4051001DA8F4 /* LMSViewController.m */,
+				9C4F6D0D16ED4145001DA8F4 /* LMSTableViewController.h */,
+				9C4F6D0E16ED4145001DA8F4 /* LMSTableViewController.m */,
 				9C4F6CD916ED4051001DA8F4 /* Supporting Files */,
 			);
 			path = Homework2b;
@@ -274,6 +279,7 @@
 				9C4F6CDF16ED4051001DA8F4 /* main.m in Sources */,
 				9C4F6CE316ED4051001DA8F4 /* LMSAppDelegate.m in Sources */,
 				9C4F6CEF16ED4051001DA8F4 /* LMSViewController.m in Sources */,
+				9C4F6D0F16ED4145001DA8F4 /* LMSTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

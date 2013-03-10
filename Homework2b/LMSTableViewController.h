@@ -1,5 +1,5 @@
 //
-//  LMSViewController.h
+//  LMSTableViewController.h
 //  Homework2b
 //
 //  Created by Lauren Shapiro on 3/10/13.
@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LMSViewController: UIViewController
+@interface LMSTableViewController : UITableViewController
+
 @end
