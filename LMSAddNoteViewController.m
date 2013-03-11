@@ -1,0 +1,38 @@
+//
+//  LMSAddNoteViewController.m
+//  Homework2b
+//
+//  Created by Lauren Shapiro on 3/11/13.
+//  Copyright (c) 2013 Lauren Shapiro. All rights reserved.
+//
+
+#import "LMSAddNoteViewController.h"
+
+@interface LMSAddNoteViewController ()
+
+@end
+
+@implementation LMSAddNoteViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
