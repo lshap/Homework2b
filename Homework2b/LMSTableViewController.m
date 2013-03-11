@@ -7,11 +7,13 @@
 //
 
 #import "LMSTableViewController.h"
+#import "LMSViewController.h"
 
 #define kLMSCellIdentifier @"note cell id"
 
 @interface LMSTableViewController ()
 @property (strong, nonatomic) NSArray *noteTitles;
+@property (strong, nonatomic) NSArray *noteDescriptions;
 @end
 
 @implementation LMSTableViewController
@@ -29,22 +31,39 @@
 {
     [super viewDidLoad];
 
-    _noteTitles = @[@"Chevy",
-                    @"BMW",
-                    @"Toyota",
-                    @"Volvo",
-                    @"Smart"];
+    _noteTitles = @[@"Please",
+                    @"Let",
+                    @"This",
+                    @"WORK"];
+    
+    _noteDescriptions = @[@"describe note 1 here",
+                    @"describe note 2 here",
+                    @"describe note 3 here",
+                    @"describe note 4 here"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    LMSViewController* detailViewController = [segue destinationViewController];
+    NSIndexPath *currpath = [[NSIndexPath alloc]init];
+     currpath = self.tableView.indexPathForSelectedRow;
+
+    NSString *currtitle = _noteTitles[currpath.row];
+    NSString *currdescription = _noteDescriptions[currpath.row];
+    
+    [detailViewController setTitleBar: currtitle];
+    [detailViewController setLabel: currdescription];
 }
 
 #pragma mark - Table view data source
@@ -115,13 +134,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
+    [self performSegueWithIdentifier:@"DisplayDetailView" sender:self];
+    
 }
 
 @end

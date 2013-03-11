@@ -16,8 +16,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.titleBar.topItem.title = self.titletext;
+    self.descriptionText.text = self.descriptionlabel;
 }
+-(void) setTitleBar: (NSString*)newtitle
+{
+    if (!self.isTitleSet) {
+        self.titletext= newtitle;
+        self.isTitleSet = TRUE;
+    }
+}
+-(void) setLabel:(NSString*)newlbl
+ {
+     if (!self.isDescriptionSet)
+     {
+         self.descriptionlabel = newlbl;
+     }
+   }
 
 - (void)didReceiveMemoryWarning
 {
