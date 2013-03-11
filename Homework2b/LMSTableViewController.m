@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *noteTitles;
 @property (strong, nonatomic) NSMutableArray *noteDescriptions;
 @property (strong, nonatomic) NSMutableArray *noteLocations;
+@property (strong, nonatomic) CLLocation* lastLocation;
 @end
 
 @implementation LMSTableViewController
@@ -70,17 +71,13 @@
     }
     else
     {
-        // record the current location before adding a new note
-        LMSAddNoteViewController* addViewController = [segue destinationViewController];
-        
         [self.locationManager startUpdatingLocation];
-    }
+        }
 }
 
 -(void)locationManager:(CLLocationManager*) manager didUpdateLocations:(NSArray*) locations
  {
-     CLLocation* location = [locations lastObject];
-     [_noteLocations addObject: location];
+     self.lastLocation = [locations lastObject];
  }
 
 -(IBAction)unwindFromNewNoteViewWithAdd:(UIStoryboardSegue *)segue {
@@ -91,6 +88,7 @@
     
     [_noteTitles addObject:newviewtitle];
     [_noteDescriptions addObject:newviewdescription];
+    [_noteLocations addObject: self.lastLocation];
     [self.locationManager stopUpdatingLocation];
     [self.tableView reloadData];
 }

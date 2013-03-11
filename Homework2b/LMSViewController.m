@@ -20,14 +20,22 @@
     self.descriptionText.text = self.descriptionlabel;
     
     _mapView = [[MKMapView alloc]init];
-    CLLocationCoordinate2D mapcoordinate = self.location.coordinate;
-    MKCoordinateRegion mapregion = MKCoordinateRegionMakeWithDistance(mapcoordinate, 800, 800);
-    [_mapView setRegion: mapregion animated: NO];
     
     MKPointAnnotation* pin = [[MKPointAnnotation alloc]init];
       pin.coordinate = self.location.coordinate;
       pin.title = self.titletext;
      [self.mapView addAnnotation:pin];
+    
+    MKCoordinateRegion region;
+    region.center = pin.coordinate;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.10;
+    span.longitudeDelta = 0.10;
+    region.span = span;
+    [self.mapView setRegion:region];
+    
+    [self.mapView setCenterCoordinate: pin.coordinate animated: YES];
+    
 }
 -(void) setTitleBar: (NSString*) newtitle
 {
