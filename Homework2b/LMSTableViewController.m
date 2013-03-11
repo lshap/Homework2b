@@ -8,12 +8,12 @@
 
 #import "LMSTableViewController.h"
 #import "LMSViewController.h"
-
+#import "LMSAddNoteViewController.h"
 #define kLMSCellIdentifier @"note cell id"
 
 @interface LMSTableViewController ()
-@property (strong, nonatomic) NSArray *noteTitles;
-@property (strong, nonatomic) NSArray *noteDescriptions;
+@property (strong, nonatomic) NSMutableArray *noteTitles;
+@property (strong, nonatomic) NSMutableArray *noteDescriptions;
 @end
 
 @implementation LMSTableViewController
@@ -31,15 +31,20 @@
 {
     [super viewDidLoad];
 
-    _noteTitles = @[@"Please",
-                    @"Let",
-                    @"This",
-                    @"WORK"];
+//    _noteTitles = @[@"note title 1",
+//                    @"note title 2",
+//                    @"note title 3",
+//                    @"note title 4"];
+//    
+//    _noteDescriptions = @[@"describe note 1 here",
+//                    @"describe note 2 here",
+//                    @"describe note 3 here",
+//                    @"describe note 4 here"];
     
-    _noteDescriptions = @[@"describe note 1 here",
-                    @"describe note 2 here",
-                    @"describe note 3 here",
-                    @"describe note 4 here"];
+    
+    _noteTitles = [[NSMutableArray alloc]init];
+    _noteDescriptions = [[NSMutableArray alloc]init];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -55,6 +60,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqualToString:@"DisplayDetailView"]){
     LMSViewController* detailViewController = [segue destinationViewController];
     NSIndexPath *currpath = [[NSIndexPath alloc]init];
      currpath = self.tableView.indexPathForSelectedRow;
@@ -64,7 +70,27 @@
     
     [detailViewController setTitleBar: currtitle];
     [detailViewController setLabel: currdescription];
+    }
+    else
+    {
+        
+    }
 }
+
+-(IBAction)unwindFromNewNoteView:(UIStoryboardSegue *)segue {
+    LMSAddNoteViewController* vc = [segue sourceViewController];
+
+    NSString* newviewtitle = vc.addTitleLabel.text;
+    NSString* newviewdescription = vc.addDescriptionLabel.text;
+    [_noteTitles addObject:newviewtitle];
+    [_noteDescriptions addObject:newviewdescription];
+    [self.tableView reloadData];
+}
+
+-(IBAction)unwindFromDetailView:(UIStoryboardSegue *)segue {
+
+}
+
 
 #pragma mark - Table view data source
 

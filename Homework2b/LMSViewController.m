@@ -26,6 +26,7 @@
         self.isTitleSet = TRUE;
     }
 }
+
 -(void) setLabel:(NSString*)newlbl
  {
      if (!self.isDescriptionSet)
@@ -33,6 +34,7 @@
          self.descriptionlabel = newlbl;
      }
    }
+
 
 - (void)didReceiveMemoryWarning
 {

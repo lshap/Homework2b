@@ -9,7 +9,6 @@
 #import "LMSAddNoteViewController.h"
 
 @interface LMSAddNoteViewController ()
-
 @end
 
 @implementation LMSAddNoteViewController
@@ -26,7 +25,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    _addTitleLabel.delegate = self;
+    _addDescriptionLabel.delegate = self;
+	
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    [tap setCancelsTouchesInView:NO];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_addDescriptionLabel resignFirstResponder];
+    [_addTitleLabel resignFirstResponder];
+    return NO;
+}
+
+-(void)dismissKeyboard {
+    [_addDescriptionLabel resignFirstResponder];
+    [_addTitleLabel resignFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSString* descriptionlabel;
 @property (nonatomic) BOOL isTitleSet;
 @property (nonatomic) BOOL isDescriptionSet;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 -(void) setLabel:(NSString*)newlbl;
 @end
