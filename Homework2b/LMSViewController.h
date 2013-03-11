@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface LMSViewController: UIViewController
 @property (weak, nonatomic) IBOutlet UINavigationBar *titleBar;
@@ -15,6 +17,12 @@
 @property (strong, nonatomic) NSString* descriptionlabel;
 @property (nonatomic) BOOL isTitleSet;
 @property (nonatomic) BOOL isDescriptionSet;
-@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) CLLocation* location;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 -(void) setLabel:(NSString*)newlbl;
+
+-(void) setViewLocation:(CLLocation*)currentlocation;
+
 @end

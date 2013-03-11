@@ -18,8 +18,18 @@
     [super viewDidLoad];
     self.titleBar.topItem.title = self.titletext;
     self.descriptionText.text = self.descriptionlabel;
+    
+    _mapView = [[MKMapView alloc]init];
+    CLLocationCoordinate2D mapcoordinate = self.location.coordinate;
+    MKCoordinateRegion mapregion = MKCoordinateRegionMakeWithDistance(mapcoordinate, 800, 800);
+    [_mapView setRegion: mapregion animated: NO];
+    
+    MKPointAnnotation* pin = [[MKPointAnnotation alloc]init];
+      pin.coordinate = self.location.coordinate;
+      pin.title = self.titletext;
+     [self.mapView addAnnotation:pin];
 }
--(void) setTitleBar: (NSString*)newtitle
+-(void) setTitleBar: (NSString*) newtitle
 {
     if (!self.isTitleSet) {
         self.titletext= newtitle;
@@ -34,7 +44,10 @@
          self.descriptionlabel = newlbl;
      }
    }
-
+-(void) setViewLocation: (CLLocation*) currentlocation
+ {
+    self.location = currentlocation;
+ }
 
 - (void)didReceiveMemoryWarning
 {

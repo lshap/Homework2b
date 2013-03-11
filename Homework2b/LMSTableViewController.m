@@ -9,11 +9,13 @@
 #import "LMSTableViewController.h"
 #import "LMSViewController.h"
 #import "LMSAddNoteViewController.h"
+
 #define kLMSCellIdentifier @"note cell id"
 
 @interface LMSTableViewController ()
 @property (strong, nonatomic) NSMutableArray *noteTitles;
 @property (strong, nonatomic) NSMutableArray *noteDescriptions;
+@property (strong, nonatomic) NSMutableArray *noteLocations;
 @end
 
 @implementation LMSTableViewController
@@ -30,26 +32,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-//    _noteTitles = @[@"note title 1",
-//                    @"note title 2",
-//                    @"note title 3",
-//                    @"note title 4"];
-//    
-//    _noteDescriptions = @[@"describe note 1 here",
-//                    @"describe note 2 here",
-//                    @"describe note 3 here",
-//                    @"describe note 4 here"];
-    
-    
+    // initialize note storage structures
     _noteTitles = [[NSMutableArray alloc]init];
     _noteDescriptions = [[NSMutableArray alloc]init];
+    _noteLocations = [[NSMutableArray alloc]init];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   // initialize location manager
+    _locationManager = [[CLLocationManager alloc]init];
+    _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    _locationManager.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,31 +51,53 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+   
+
     if ([segue.identifier isEqualToString:@"DisplayDetailView"]){
     LMSViewController* detailViewController = [segue destinationViewController];
+    
     NSIndexPath *currpath = [[NSIndexPath alloc]init];
-     currpath = self.tableView.indexPathForSelectedRow;
-
-    NSString *currtitle = _noteTitles[currpath.row];
-    NSString *currdescription = _noteDescriptions[currpath.row];
+    currpath = self.tableView.indexPathForSelectedRow;
+        
+     NSString *currtitle = _noteTitles[currpath.row];
+     NSString *currdescription = _noteDescriptions[currpath.row];
+     CLLocation* location = _noteLocations[currpath.row];
     
     [detailViewController setTitleBar: currtitle];
     [detailViewController setLabel: currdescription];
+    [detailViewController setViewLocation: location];
+        
     }
     else
     {
+        // record the current location before adding a new note
+        LMSAddNoteViewController* addViewController = [segue destinationViewController];
         
+        [self.locationManager startUpdatingLocation];
     }
 }
 
--(IBAction)unwindFromNewNoteView:(UIStoryboardSegue *)segue {
+-(void)locationManager:(CLLocationManager*) manager didUpdateLocations:(NSArray*) locations
+ {
+     CLLocation* location = [locations lastObject];
+     [_noteLocations addObject: location];
+ }
+
+-(IBAction)unwindFromNewNoteViewWithAdd:(UIStoryboardSegue *)segue {
     LMSAddNoteViewController* vc = [segue sourceViewController];
 
     NSString* newviewtitle = vc.addTitleLabel.text;
     NSString* newviewdescription = vc.addDescriptionLabel.text;
+    
     [_noteTitles addObject:newviewtitle];
     [_noteDescriptions addObject:newviewdescription];
+    [self.locationManager stopUpdatingLocation];
     [self.tableView reloadData];
+}
+
+-(IBAction)unwindFromNewNoteViewWithCancel:(UIStoryboardSegue *)segue
+{
+  [self.locationManager stopUpdatingLocation];
 }
 
 -(IBAction)unwindFromDetailView:(UIStoryboardSegue *)segue {

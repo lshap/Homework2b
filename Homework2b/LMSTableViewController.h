@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface LMSTableViewController : UITableViewController
-
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @end

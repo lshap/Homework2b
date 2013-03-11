@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LMSAddNoteViewController : UIViewController <UITextFieldDelegate>
-@property (strong, nonatomic) IBOutlet UITextField *addTitleLabel;
-@property (strong, nonatomic) IBOutlet UITextField *addDescriptionLabel;
-
+@property (weak, nonatomic) IBOutlet UITextField *addTitleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *addDescriptionLabel;
 @end
