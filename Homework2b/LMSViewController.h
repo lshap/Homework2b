@@ -18,8 +18,8 @@
 @property (nonatomic) BOOL isTitleSet;
 @property (nonatomic) BOOL isDescriptionSet;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-@property (strong, nonatomic) CLLocation* location;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CLLocation* location;
 
 -(void) setLabel:(NSString*)newlbl;
 

@@ -17,7 +17,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Add New Note">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted">
@@ -51,7 +51,7 @@
                                     <constraint firstItem="yvY-7w-kEa" firstAttribute="leading" secondItem="2z1-Xy-ljV" secondAttribute="leading" constant="65" id="Pmc-XN-YYy"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="0jU-0A-8tJ" kind="modal" identifier="DisplayDetailView" id="ebx-cc-Eqp"/>
+                                    <segue destination="0jU-0A-8tJ" kind="modal" identifier="DisplayDetailView" id="CaA-aw-yDJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -181,20 +181,20 @@
                                     <segue destination="Qvw-PS-wpB" kind="unwind" unwindAction="unwindFromDetailView:" id="0qu-yE-Znt"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u6C-El-1jY">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="mapView" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-um-sXh">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="6aj-Sd-9Oh"/>
-                                    <constraint firstAttribute="height" constant="206" id="YOT-g9-5Ab"/>
+                                    <constraint firstAttribute="height" constant="128" id="N8F-d4-aIa"/>
+                                    <constraint firstAttribute="width" constant="240" id="v2I-LZ-cnF"/>
                                 </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u6C-El-1jY" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" constant="148" id="1qv-Ds-Wef"/>
                             <constraint firstItem="8FR-eT-kOS" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" type="default" id="7Wk-6A-ZL3"/>
-                            <constraint firstAttribute="bottom" secondItem="3u2-HX-vXM" secondAttribute="bottom" constant="14" id="BY4-MA-1Fu"/>
-                            <constraint firstItem="3u2-HX-vXM" firstAttribute="centerX" secondItem="af8-NS-uEH" secondAttribute="centerX" type="default" id="Jc8-gD-6Vl"/>
-                            <constraint firstItem="u6C-El-1jY" firstAttribute="centerX" secondItem="8FR-eT-kOS" secondAttribute="centerX" type="default" id="XXP-Ev-iVP"/>
+                            <constraint firstItem="bjg-um-sXh" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" constant="28" id="LXx-Rs-fKE"/>
+                            <constraint firstAttribute="bottom" secondItem="3u2-HX-vXM" secondAttribute="bottom" constant="15" id="PHu-j9-1gg"/>
+                            <constraint firstItem="3u2-HX-vXM" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" constant="42" id="VOs-Gt-JgQ"/>
+                            <constraint firstItem="bjg-um-sXh" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" constant="197" id="cJS-Sz-h81"/>
                             <constraint firstItem="8FR-eT-kOS" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" type="default" id="go6-Er-zjZ"/>
                             <constraint firstItem="8FR-eT-kOS" firstAttribute="trailing" secondItem="KdW-wo-MF1" secondAttribute="trailing" type="default" id="wuk-2h-mfa"/>
                             <constraint firstItem="af8-NS-uEH" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="x2X-aq-0nz"/>
@@ -204,7 +204,7 @@
                     <connections>
                         <outlet property="backButton" destination="3u2-HX-vXM" id="XjW-2P-Rb0"/>
                         <outlet property="descriptionText" destination="af8-NS-uEH" id="Tw2-Gq-nee"/>
-                        <outlet property="mapView" destination="u6C-El-1jY" id="LMx-Vd-RYN"/>
+                        <outlet property="mapView" destination="bjg-um-sXh" id="g5V-Zl-N87"/>
                         <outlet property="titleBar" destination="8FR-eT-kOS" id="ipg-Me-8S7"/>
                     </connections>
                 </viewController>
@@ -214,6 +214,38 @@
             <point key="canvasLocation" x="691" y="-364"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="LMSAddNoteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LMSAddNoteViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addDescriptionLabel" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="addTitleLabel" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="LMSTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LMSTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unwindFromDetailView:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="unwindFromNewNoteViewWithAdd:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="unwindFromNewNoteViewWithCancel:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="LMSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LMSViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="descriptionText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

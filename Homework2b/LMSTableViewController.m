@@ -8,6 +8,7 @@
 
 #import "LMSTableViewController.h"
 #import "LMSViewController.h"
+#import "LMSMapViewController.h"
 #import "LMSAddNoteViewController.h"
 
 #define kLMSCellIdentifier @"note cell id"
@@ -67,8 +68,8 @@
     [detailViewController setTitleBar: currtitle];
     [detailViewController setLabel: currdescription];
     [detailViewController setViewLocation: location];
-        
     }
+ 
     else
     {
         [self.locationManager startUpdatingLocation];
@@ -172,7 +173,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    [self performSegueWithIdentifier:@"DisplayDetailView" sender:self];
+  [self performSegueWithIdentifier:@"DisplayDetailView" sender:self];
+    
     
 }
 

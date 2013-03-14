@@ -19,23 +19,12 @@
     self.titleBar.topItem.title = self.titletext;
     self.descriptionText.text = self.descriptionlabel;
     
-    _mapView = [[MKMapView alloc]init];
-    
-    MKPointAnnotation* pin = [[MKPointAnnotation alloc]init];
-      pin.coordinate = self.location.coordinate;
-      pin.title = self.titletext;
-     [self.mapView addAnnotation:pin];
-    
-    MKCoordinateRegion region;
-    region.center = pin.coordinate;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.10;
-    span.longitudeDelta = 0.10;
-    region.span = span;
-    [self.mapView setRegion:region];
-    
-    [self.mapView setCenterCoordinate: pin.coordinate animated: YES];
-    
+    [self.mapView setDelegate: self];
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self addPinToMapAtLocation:self.location];
+
 }
 -(void) setTitleBar: (NSString*) newtitle
 {
@@ -43,6 +32,18 @@
         self.titletext= newtitle;
         self.isTitleSet = TRUE;
     }
+}
+
+- (void)addPinToMapAtLocation:(CLLocation *)location
+{
+    MKPointAnnotation* pin = [[MKPointAnnotation alloc]init];
+    pin.coordinate = self.location.coordinate;
+    [self.mapView addAnnotation:pin];
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.location.coordinate, 1000, 1000);
+    [self.mapView setRegion:region];
+    [self.mapView setCenterCoordinate: pin.coordinate animated: YES];
+    [self.mapView reloadInputViews];
 }
 
 -(void) setLabel:(NSString*)newlbl
@@ -55,6 +56,7 @@
 -(void) setViewLocation: (CLLocation*) currentlocation
  {
     self.location = currentlocation;
+     
  }
 
 - (void)didReceiveMemoryWarning
