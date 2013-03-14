@@ -11,18 +11,16 @@
 #import <MapKit/MapKit.h>
 
 @interface LMSViewController: UIViewController
-@property (weak, nonatomic) IBOutlet UINavigationBar *titleBar;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionText;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) NSString* titletext;
 @property (strong, nonatomic) NSString* descriptionlabel;
-@property (nonatomic) BOOL isTitleSet;
-@property (nonatomic) BOOL isDescriptionSet;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocation* location;
 
 -(void) setLabel:(NSString*)newlbl;
-
+-(void) setTitleText:(NSString*)newtitle;
 -(void) setViewLocation:(CLLocation*)currentlocation;
 
 @end

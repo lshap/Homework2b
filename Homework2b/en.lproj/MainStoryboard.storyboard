@@ -16,7 +16,7 @@
                             <rect key="frame" x="0.0" y="66" width="320" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Add New Note">
+                            <state key="normal" backgroundImage="bigaddnewnote.png">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -46,9 +46,10 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="1" green="0.88235294819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="yvY-7w-kEa" firstAttribute="top" secondItem="2z1-Xy-ljV" secondAttribute="top" constant="11" id="N7f-Jf-OXD"/>
-                                    <constraint firstItem="yvY-7w-kEa" firstAttribute="leading" secondItem="2z1-Xy-ljV" secondAttribute="leading" constant="65" id="Pmc-XN-YYy"/>
+                                    <constraint firstItem="yvY-7w-kEa" firstAttribute="centerX" secondItem="2z1-Xy-ljV" secondAttribute="centerX" type="default" id="V25-Br-TCy"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="0jU-0A-8tJ" kind="modal" identifier="DisplayDetailView" id="CaA-aw-yDJ"/>
@@ -74,8 +75,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHl-nz-PfW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="ZlO-Kv-nuh"/>
+                                    <constraint firstAttribute="height" constant="44" id="o9o-pb-Kxi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Create">
+                                <state key="normal" backgroundImage="createbutton.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -88,17 +93,20 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TN-aW-mQP">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b86-se-ytU">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1y-IO-hcn">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="vem-oD-l6Z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" backgroundImage="cancelbutton.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -111,38 +119,39 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="De6-t3-ZDw">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Fg1-KR-lVk"/>
+                                    <constraint firstAttribute="width" constant="207" id="szI-Eg-q6g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzL-8c-Szf">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="a7f-TR-SSO"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.88235294818878174" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rHl-nz-PfW" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="0Dv-7E-dBj"/>
                             <constraint firstItem="1TN-aW-mQP" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Qe-d4-m7a"/>
-                            <constraint firstItem="tzL-8c-Szf" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="124" id="Bi8-PZ-DW4"/>
-                            <constraint firstAttribute="bottom" secondItem="a1y-IO-hcn" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Hqb-4a-7bc"/>
-                            <constraint firstItem="b86-se-ytU" firstAttribute="top" secondItem="De6-t3-ZDw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PE2-Jp-47N"/>
+                            <constraint firstItem="a1y-IO-hcn" firstAttribute="bottom" secondItem="rHl-nz-PfW" secondAttribute="bottom" type="default" id="2XK-dA-ySM"/>
+                            <constraint firstItem="De6-t3-ZDw" firstAttribute="top" secondItem="Rg9-x5-4SK" secondAttribute="top" constant="82" id="ARq-qW-T7D"/>
+                            <constraint firstItem="tzL-8c-Szf" firstAttribute="trailing" secondItem="De6-t3-ZDw" secondAttribute="trailing" type="default" id="E73-Pp-Kdj"/>
                             <constraint firstItem="b86-se-ytU" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QoO-F5-zTr"/>
-                            <constraint firstItem="rHl-nz-PfW" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UgX-Qd-b4L"/>
+                            <constraint firstAttribute="bottom" secondItem="rHl-nz-PfW" secondAttribute="bottom" constant="19" id="Slb-67-R4l"/>
                             <constraint firstItem="1TN-aW-mQP" firstAttribute="top" secondItem="Rg9-x5-4SK" secondAttribute="top" constant="52" id="WbE-DE-ioL"/>
-                            <constraint firstItem="De6-t3-ZDw" firstAttribute="centerX" secondItem="a1y-IO-hcn" secondAttribute="centerX" type="default" id="jU6-i7-1Si"/>
-                            <constraint firstItem="tzL-8c-Szf" firstAttribute="top" secondItem="De6-t3-ZDw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mnF-Hm-IsQ"/>
-                            <constraint firstItem="De6-t3-ZDw" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="95" id="oJq-l0-iiJ"/>
-                            <constraint firstItem="De6-t3-ZDw" firstAttribute="top" secondItem="Rg9-x5-4SK" secondAttribute="top" constant="54" id="sH4-iJ-llz"/>
+                            <constraint firstItem="rHl-nz-PfW" firstAttribute="top" secondItem="a1y-IO-hcn" secondAttribute="top" type="default" id="X1D-D3-c8R"/>
+                            <constraint firstItem="De6-t3-ZDw" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="60" id="ZtW-uD-iba"/>
+                            <constraint firstItem="De6-t3-ZDw" firstAttribute="leading" secondItem="tzL-8c-Szf" secondAttribute="leading" type="default" id="ff7-a2-M0b"/>
+                            <constraint firstItem="tzL-8c-Szf" firstAttribute="top" secondItem="Rg9-x5-4SK" secondAttribute="top" constant="166" id="iSn-dh-Ns0"/>
+                            <constraint firstItem="b86-se-ytU" firstAttribute="top" secondItem="Rg9-x5-4SK" secondAttribute="top" constant="126" id="l1e-9p-AMQ"/>
+                            <constraint firstItem="a1y-IO-hcn" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="107" id="rc6-gu-NYu"/>
+                            <constraint firstItem="rHl-nz-PfW" firstAttribute="leading" secondItem="Rg9-x5-4SK" secondAttribute="leading" constant="14" id="sZi-mk-tkg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addDescriptionLabel" destination="tzL-8c-Szf" id="BDI-lG-bxO"/>
                         <outlet property="addTitleLabel" destination="De6-t3-ZDw" id="BBF-OO-2Yc"/>
+                        <outlet property="descriptionLabel" destination="b86-se-ytU" id="AV4-yD-P70"/>
+                        <outlet property="titleLabel" destination="1TN-aW-mQP" id="mh9-xQ-NAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6c-Cc-79f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,17 +169,16 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af8-NS-uEH">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-eT-kOS">
-                                <items>
-                                    <navigationItem title="Title" id="Tnd-hS-faH"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3u2-HX-vXM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="1RU-xT-ywD"/>
+                                    <constraint firstAttribute="height" constant="44" id="f2A-Bg-afS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" backgroundImage="backbutton.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -183,29 +191,33 @@
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="mapView" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-um-sXh">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="N8F-d4-aIa"/>
+                                    <constraint firstAttribute="height" constant="214" id="Uw0-XK-Uv8"/>
                                     <constraint firstAttribute="width" constant="240" id="v2I-LZ-cnF"/>
                                 </constraints>
                             </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3P-we-n72">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.88235294818878174" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="8FR-eT-kOS" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" type="default" id="7Wk-6A-ZL3"/>
+                            <constraint firstAttribute="bottom" secondItem="3u2-HX-vXM" secondAttribute="bottom" constant="15" id="FDp-S8-QTm"/>
+                            <constraint firstItem="I3P-we-n72" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" constant="13" id="HbV-N1-jgP"/>
                             <constraint firstItem="bjg-um-sXh" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" constant="28" id="LXx-Rs-fKE"/>
-                            <constraint firstAttribute="bottom" secondItem="3u2-HX-vXM" secondAttribute="bottom" constant="15" id="PHu-j9-1gg"/>
-                            <constraint firstItem="3u2-HX-vXM" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" constant="42" id="VOs-Gt-JgQ"/>
-                            <constraint firstItem="bjg-um-sXh" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" constant="197" id="cJS-Sz-h81"/>
-                            <constraint firstItem="8FR-eT-kOS" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" type="default" id="go6-Er-zjZ"/>
-                            <constraint firstItem="8FR-eT-kOS" firstAttribute="trailing" secondItem="KdW-wo-MF1" secondAttribute="trailing" type="default" id="wuk-2h-mfa"/>
+                            <constraint firstItem="bjg-um-sXh" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" constant="138" id="Mt9-tc-9yq"/>
+                            <constraint firstItem="I3P-we-n72" firstAttribute="centerX" secondItem="KdW-wo-MF1" secondAttribute="centerX" type="default" id="h3z-oj-mcA"/>
                             <constraint firstItem="af8-NS-uEH" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="x2X-aq-0nz"/>
                             <constraint firstItem="af8-NS-uEH" firstAttribute="top" secondItem="KdW-wo-MF1" secondAttribute="top" constant="64" id="xZi-Dj-3b5"/>
+                            <constraint firstItem="3u2-HX-vXM" firstAttribute="leading" secondItem="KdW-wo-MF1" secondAttribute="leading" constant="33" id="yxc-FE-X7U"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="3u2-HX-vXM" id="XjW-2P-Rb0"/>
                         <outlet property="descriptionText" destination="af8-NS-uEH" id="Tw2-Gq-nee"/>
                         <outlet property="mapView" destination="bjg-um-sXh" id="g5V-Zl-N87"/>
-                        <outlet property="titleBar" destination="8FR-eT-kOS" id="ipg-Me-8S7"/>
+                        <outlet property="titleLabel" destination="I3P-we-n72" id="8er-ZW-BFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gS-6K-2bY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,20 +226,26 @@
             <point key="canvasLocation" x="691" y="-364"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backbutton.png" width="95" height="49"/>
+        <image name="bigaddnewnote.png" width="642" height="89"/>
+        <image name="cancelbutton.png" width="95" height="49"/>
+        <image name="createbutton.png" width="95" height="49"/>
+    </resources>
     <classes>
         <class className="LMSAddNoteViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LMSAddNoteViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="addDescriptionLabel" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="addTitleLabel" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="LMSTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LMSTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="unwindFromDetailView:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="unwindFromNewNoteViewWithAdd:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="unwindFromNewNoteViewWithCancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="viewCell" candidateClass="UITableViewCell"/>
             </relationships>
         </class>
         <class className="LMSViewController" superclassName="UIViewController">
@@ -236,14 +254,11 @@
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="descriptionText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

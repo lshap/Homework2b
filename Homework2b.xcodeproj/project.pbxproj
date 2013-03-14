@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C3DDBE516F23B2400BD43A5 /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBE416F23B2400BD43A5 /* backbutton.png */; };
+		9C3DDBE716F23BFA00BD43A5 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBE616F23BFA00BD43A5 /* background.png */; };
+		9C3DDBE916F23CBE00BD43A5 /* addnewnotebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBE816F23CBE00BD43A5 /* addnewnotebutton.png */; };
+		9C3DDBEB16F23F7A00BD43A5 /* bigaddnewnote.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBEA16F23F7A00BD43A5 /* bigaddnewnote.png */; };
+		9C3DDBED16F23FD900BD43A5 /* createbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBEC16F23FD900BD43A5 /* createbutton.png */; };
+		9C3DDBEF16F2402B00BD43A5 /* cancelbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBEE16F2402B00BD43A5 /* cancelbutton.png */; };
+		9C3DDBF116F2412E00BD43A5 /* newnoteview.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBF016F2412E00BD43A5 /* newnoteview.png */; };
+		9C3DDBF316F242D100BD43A5 /* Avenir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBF216F242D100BD43A5 /* Avenir.ttf */; };
+		9C3DDBF516F243D900BD43A5 /* RegencieLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBF416F243D900BD43A5 /* RegencieLight.ttf */; };
+		9C3DDBF816F27FBC00BD43A5 /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DDBFA16F27FBC00BD43A5 /* Avenir.ttc */; };
 		9C4F6CD316ED4050001DA8F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F6CD216ED4050001DA8F4 /* UIKit.framework */; };
 		9C4F6CD516ED4050001DA8F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F6CD416ED4050001DA8F4 /* Foundation.framework */; };
 		9C4F6CD716ED4050001DA8F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4F6CD616ED4050001DA8F4 /* CoreGraphics.framework */; };
@@ -40,6 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C3DDBE416F23B2400BD43A5 /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
+		9C3DDBE616F23BFA00BD43A5 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		9C3DDBE816F23CBE00BD43A5 /* addnewnotebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addnewnotebutton.png; sourceTree = "<group>"; };
+		9C3DDBEA16F23F7A00BD43A5 /* bigaddnewnote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigaddnewnote.png; sourceTree = "<group>"; };
+		9C3DDBEC16F23FD900BD43A5 /* createbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createbutton.png; sourceTree = "<group>"; };
+		9C3DDBEE16F2402B00BD43A5 /* cancelbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelbutton.png; sourceTree = "<group>"; };
+		9C3DDBF016F2412E00BD43A5 /* newnoteview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newnoteview.png; sourceTree = "<group>"; };
+		9C3DDBF216F242D100BD43A5 /* Avenir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Avenir.ttf; path = ../../../../Desktop/Avenir.ttf; sourceTree = "<group>"; };
+		9C3DDBF416F243D900BD43A5 /* RegencieLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = RegencieLight.ttf; path = ../../../../Desktop/RegencieLight.ttf; sourceTree = "<group>"; };
+		9C3DDBF916F27FBC00BD43A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Avenir.ttc; sourceTree = "<group>"; };
 		9C4F6CCF16ED4050001DA8F4 /* Homework2b.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework2b.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4F6CD216ED4050001DA8F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C4F6CD416ED4050001DA8F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,10 +156,17 @@
 				9C4F6CE116ED4051001DA8F4 /* LMSAppDelegate.h */,
 				9C4F6CE216ED4051001DA8F4 /* LMSAppDelegate.m */,
 				9C4F6CEA16ED4051001DA8F4 /* MainStoryboard.storyboard */,
+				9C3DDBF016F2412E00BD43A5 /* newnoteview.png */,
+				9C3DDBEE16F2402B00BD43A5 /* cancelbutton.png */,
+				9C3DDBEC16F23FD900BD43A5 /* createbutton.png */,
+				9C3DDBEA16F23F7A00BD43A5 /* bigaddnewnote.png */,
+				9C3DDBE816F23CBE00BD43A5 /* addnewnotebutton.png */,
+				9C3DDBE616F23BFA00BD43A5 /* background.png */,
+				9C3DDBE416F23B2400BD43A5 /* backbutton.png */,
 				9C4F6CED16ED4051001DA8F4 /* LMSViewController.h */,
 				9C4F6CEE16ED4051001DA8F4 /* LMSViewController.m */,
-				9C4F6D0D16ED4145001DA8F4 /* LMSTableViewController.h */,
 				9C4F6D0E16ED4145001DA8F4 /* LMSTableViewController.m */,
+				9C4F6D0D16ED4145001DA8F4 /* LMSTableViewController.h */,
 				9C4F6CD916ED4051001DA8F4 /* Supporting Files */,
 			);
 			path = Homework2b;
@@ -150,6 +177,9 @@
 			children = (
 				9C4F6CDA16ED4051001DA8F4 /* Homework2b-Info.plist */,
 				9C4F6CDB16ED4051001DA8F4 /* InfoPlist.strings */,
+				9C3DDBFA16F27FBC00BD43A5 /* Avenir.ttc */,
+				9C3DDBF416F243D900BD43A5 /* RegencieLight.ttf */,
+				9C3DDBF216F242D100BD43A5 /* Avenir.ttf */,
 				9C4F6CDE16ED4051001DA8F4 /* main.m */,
 				9C4F6CE016ED4051001DA8F4 /* Homework2b-Prefix.pch */,
 				9C4F6CE416ED4051001DA8F4 /* Default.png */,
@@ -255,6 +285,16 @@
 				9C4F6CE716ED4051001DA8F4 /* Default@2x.png in Resources */,
 				9C4F6CE916ED4051001DA8F4 /* Default-568h@2x.png in Resources */,
 				9C4F6CEC16ED4051001DA8F4 /* MainStoryboard.storyboard in Resources */,
+				9C3DDBE516F23B2400BD43A5 /* backbutton.png in Resources */,
+				9C3DDBE716F23BFA00BD43A5 /* background.png in Resources */,
+				9C3DDBE916F23CBE00BD43A5 /* addnewnotebutton.png in Resources */,
+				9C3DDBEB16F23F7A00BD43A5 /* bigaddnewnote.png in Resources */,
+				9C3DDBED16F23FD900BD43A5 /* createbutton.png in Resources */,
+				9C3DDBEF16F2402B00BD43A5 /* cancelbutton.png in Resources */,
+				9C3DDBF116F2412E00BD43A5 /* newnoteview.png in Resources */,
+				9C3DDBF316F242D100BD43A5 /* Avenir.ttf in Resources */,
+				9C3DDBF516F243D900BD43A5 /* RegencieLight.ttf in Resources */,
+				9C3DDBF816F27FBC00BD43A5 /* Avenir.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +356,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9C3DDBFA16F27FBC00BD43A5 /* Avenir.ttc */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C3DDBF916F27FBC00BD43A5 /* en */,
+			);
+			name = Avenir.ttc;
+			path = ../../../../Desktop;
+			sourceTree = "<group>";
+		};
 		9C4F6CDB16ED4051001DA8F4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

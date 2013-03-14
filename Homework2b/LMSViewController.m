@@ -16,8 +16,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.titleBar.topItem.title = self.titletext;
+    self.descriptionText.font = [UIFont fontWithName:@"Avenir Heavy" size:20.0];
+    self.titleLabel.font = [UIFont fontWithName:@"Avenir Heavy" size:36.0];
+
     self.descriptionText.text = self.descriptionlabel;
+    self.titleLabel.text = self.titletext;
     
     [self.mapView setDelegate: self];
 }
@@ -26,13 +29,10 @@
     [self addPinToMapAtLocation:self.location];
 
 }
--(void) setTitleBar: (NSString*) newtitle
+-(void) setTitleText: (NSString*) newtitle
 {
-    if (!self.isTitleSet) {
         self.titletext= newtitle;
-        self.isTitleSet = TRUE;
     }
-}
 
 - (void)addPinToMapAtLocation:(CLLocation *)location
 {
@@ -47,12 +47,11 @@
 }
 
 -(void) setLabel:(NSString*)newlbl
- {
-     if (!self.isDescriptionSet)
-     {
+{
          self.descriptionlabel = newlbl;
-     }
+     
    }
+
 -(void) setViewLocation: (CLLocation*) currentlocation
  {
     self.location = currentlocation;

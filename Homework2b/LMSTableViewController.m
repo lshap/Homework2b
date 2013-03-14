@@ -65,7 +65,7 @@
      NSString *currdescription = _noteDescriptions[currpath.row];
      CLLocation* location = _noteLocations[currpath.row];
     
-    [detailViewController setTitleBar: currtitle];
+    [detailViewController setTitleText: currtitle];
     [detailViewController setLabel: currdescription];
     [detailViewController setViewLocation: location];
     }

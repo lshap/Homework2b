@@ -33,6 +33,11 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    
+    self.addDescriptionLabel.font = [UIFont fontWithName:@"Avenir" size:16.0];
+       self.addTitleLabel.font = [UIFont fontWithName:@"Avenir" size:16.0];
+    self.descriptionLabel.font = [UIFont fontWithName:@"Avenir" size:16.0];
+    self.titleLabel.font = [UIFont fontWithName:@"Avenir" size:16.0];
     [tap setCancelsTouchesInView:NO];
 }
 
